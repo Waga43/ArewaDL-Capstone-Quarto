@@ -177,8 +177,11 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
   </sec>
   <sec id="model-architectures">
     <title>Model Architectures</title>
-    <p>Two CNN architectures were employed Tan and Le
-    (<xref alt="2019" rid="ref-tan_efficientnetU003A_2019" ref-type="bibr">2019</xref>):</p>
+    <p>Two CNN architectures were employed
+    (<xref alt="He et al. 2016" rid="ref-he_deep_2016" ref-type="bibr">He
+    et al. 2016</xref>;
+    <xref alt="Tan and Le 2019" rid="ref-tan_efficientnetU003A_2019" ref-type="bibr">Tan
+    and Le 2019</xref>):</p>
     <list list-type="bullet">
       <list-item>
         <p><bold>ResNet34</bold>: A 34-layer residual network known for
