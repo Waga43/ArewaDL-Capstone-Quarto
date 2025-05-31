@@ -5,6 +5,17 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
 
 <front>
+<journal-meta>
+<journal-id></journal-id>
+
+<journal-title-group>
+</journal-title-group>
+<issn></issn>
+
+<publisher>
+<publisher-name></publisher-name>
+</publisher>
+</journal-meta>
 
 
 <article-meta>
@@ -23,6 +34,7 @@ Traditional Attire</article-title>
 </name>
 <string-name>Naziru Abdussalam Ibrahim</string-name>
 
+<email>naziruai@gmail.com</email>
 <xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
 </contrib>
 <contrib contrib-type="author">
@@ -87,20 +99,16 @@ Traditional Attire</article-title>
 
 <email>yahyarimi01@gmail.com</email>
 </contrib>
-<contrib contrib-type="author">
-<name>
-<surname></surname>
-<given-names></given-names>
-</name>
-<string-name></string-name>
-
-</contrib>
 </contrib-group>
 <author-notes>
-<corresp id="cor-1"></corresp>
+<corresp id="cor-1">naziruai@gmail.com</corresp>
 </author-notes>
 
-
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2025-06-01">
+<year>2025</year>
+<month>6</month>
+<day>1</day>
+</pub-date>
 
 
 
@@ -240,6 +248,8 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
 </sec>
 <sec id="acknowledgment">
   <title>Acknowledgment</title>
+  <p>The authors wish to acknowledge the efforts of the entire team at
+  Arewa Data Science</p>
 </sec>
 </body>
 
