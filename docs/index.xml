@@ -89,6 +89,7 @@ Traditional Attire</article-title>
 </name>
 <string-name>Abubakar Sadiq Sulaiman</string-name>
 
+<email>abubakarsani@gmail.com</email>
 </contrib>
 <contrib contrib-type="author">
 <name>
@@ -140,22 +141,22 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
   <title>Introduction</title>
   <p>The culture of Nigeria is shaped by Nigeria’s multiple ethnic
   groups. The country has over 50 languages and over 250 dialects and
-  ethnic groups “Culture – MFA Press Center”
-  (<xref alt="n.d." rid="ref-noauthor_culture_nodate" ref-type="bibr">n.d.</xref>)
-  . The three major ethnic groups are the Hausa-Fulani who are
-  predominant in the north, the Yoruba who are predominant in the
-  southwest, and the Igbo who are predominant in the south-east. In an
-  effort to promote the rich cultural heritage of the country, the
-  Ministry of Information, Culture and Tourism was created in the year
-  2015.</p>
+  ethnic groups
+  (<xref alt="Ebby 2024" rid="ref-ebby_traditional_2024" ref-type="bibr">Ebby
+  2024</xref>;
+  <xref alt="Ministry of Information, Culture and Tourism n.d." rid="ref-Ministry_of_Information_Culture_and_Tourism_2025" ref-type="bibr">Ministry
+  of Information, Culture and Tourism n.d.</xref>) . The three major
+  ethnic groups are the Hausa-Fulani who are predominant in the north,
+  the Yoruba who are predominant in the southwest, and the Igbo who are
+  predominant in the south-east. In an effort to promote the rich
+  cultural heritage of the country, the Ministry of Information, Culture
+  and Tourism was created in the year 2015.</p>
   <p>Nigeria’s over 250 diverse ethnic groups are distinguished by
-  unique traditional attires that embody their cultural identities
-  (<xref alt="“Culture – MFA Press Center” n.d." rid="ref-noauthor_culture_nodate" ref-type="bibr">“Culture
-  – MFA Press Center” n.d.</xref>). Manual classification of these
-  garments can be time-consuming and subjective. This project explores
-  the application of deep learning techniques to accurately classify
-  images of traditional Nigerian clothing, facilitating cultural
-  education and digital archiving.</p>
+  unique traditional attires that embody their cultural identities.
+  Manual classification of these garments can be time-consuming and
+  subjective. This project explores the application of deep learning
+  techniques to accurately classify images of traditional Nigerian
+  clothing, facilitating cultural education and digital archiving.</p>
 </sec>
 <sec id="methodology">
   <title>Methodology</title>
@@ -305,8 +306,11 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
       <uri>https://loispiration.com/2024/06/17/the-traditional-attires-of-nigerian-tribes/</uri>
     </element-citation>
   </ref>
-  <ref id="ref-noauthor_culture_nodate">
+  <ref id="ref-Ministry_of_Information_Culture_and_Tourism_2025">
     <element-citation>
+      <person-group person-group-type="author">
+        <string-name>Ministry of Information, Culture and Tourism</string-name>
+      </person-group>
       <article-title>Culture – MFA Press Center</article-title>
       <date-in-citation content-type="access-date"><year iso-8601-date="2025-05-31">2025</year><month>05</month><day>31</day></date-in-citation>
       <uri>https://foreignaffairs.gov.ng/nigeria/nigeria-culture/</uri>
