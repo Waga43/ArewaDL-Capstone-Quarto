@@ -1,27 +1,70 @@
-% Options for packages loaded elsewhere
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, New_IEEEtran_how-to.pdf, bare_jrnl_new_sample4.tex,
+%%*************************************************************************
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
 %
 \documentclass[
-  letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrartcl}
-
-\usepackage{amsmath,amssymb}
+  journal,
+]{IEEEtran}%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-\usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+%\usepackage{lmodern}
+\ifPDFTeX\else
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -30,41 +73,24 @@
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
+\parindent    1.0em
+\ifCLASSOPTIONcompsoc
+  \parindent    1.5em
+\fi
 \makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
-\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}{
-    \@ifstar
-      \xxxParagraphStar
-      \xxxParagraphNoStar
-  }
-  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
-  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}{
-    \@ifstar
-      \xxxSubParagraphStar
-      \xxxSubParagraphNoStar
-  }
-  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
-  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -127,7 +153,11 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\KOMAoption{captions}{tableheading}
+\usepackage{physics}
+\usepackage[version=3]{mhchem}
+\usepackage{orcidlink}
+\usepackage{float}
+\floatplacement{table}{htb}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -147,9 +177,9 @@
   \newcommand\listtablename{List of Tables}
 \fi
 \ifdefined\figurename
-  \renewcommand*\figurename{Figure}
+  \renewcommand*\figurename{Fig.}
 \else
-  \newcommand\figurename{Figure}
+  \newcommand\figurename{Fig.}
 \fi
 \ifdefined\tablename
   \renewcommand*\tablename{Table}
@@ -169,13 +199,27 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\usepackage{bookmark}
-
+\usepackage[skip=2pt,font=footnotesize]{caption}
+%\captionsetup{format=myformat}
+\makeatletter
+%\setlength{\cslhangindent}{0pt plus .5pt}
+\providecommand{\bibfont}{\footnotesize}
+\let\CSLReferences@rig=\CSLReferences
+\renewcommand{\CSLReferences}[2]{
+\bibfont\settowidth\csllabelwidth{[999]}
+\CSLReferences@rig{#1}{#2}
+\vskip 0.3\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip%
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Deep Learning Based Classification of Nigerian Traditional Attire},
+  pdfauthor={Naziru Abdussalam Ibrahim; Ahmad Saad; Abdulwasiu Bamidele Popoola; Taiwo Soffiyah Abass; Ayodeji Akande; Shamsu Abdullahi; Abubakar Sadiq Sulaiman; Yahya Abdurrazaq},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -183,17 +227,51 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
 
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
 \title{Deep Learning Based Classification of Nigerian Traditional
 Attire}
-\author{Naziru Abdussalam Ibrahim \and Ahmad Saad \and Abdulwasiu
-Bamidele Popoola \and Taiwo Soffiyah Abass \and Ayodeji
-Akande \and Shamsu Abdullahi \and Abubakar Sadiq Sulaiman \and Yahya
-Abdurrazaq}
-\date{2025-06-01}
 
+\author{
+Naziru Abdussalam Ibrahim,~Ahmad Saad,~Abdulwasiu Bamidele
+Popoola,~Taiwo Soffiyah Abass,~Ayodeji Akande,~Shamsu
+Abdullahi,~Abubakar Sadiq Sulaiman
+and~Yahya Abdurrazaq%
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+%by-author.affiliations
+}
 \begin{document}
+
+% The paper headers
+
+% use for special paper notices
+
+% make the title area
 \maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
 \begin{abstract}
 This study presents a deep learning approach to classify images of
 Nigerian traditional attire into their respective ethnic categories.
@@ -202,20 +280,30 @@ and EfficientNet-B0 architectures, the project aims to automate the
 identification of cultural garments, thereby contributing to the
 preservation and appreciation of Nigeria's rich cultural heritage.
 \end{abstract}
+% Note that keywords are not normally used for peerreview papers.
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+% \IEEEpeerreviewmaketitle
 
 
 \subsection{Introduction}\label{introduction}
 
 The culture of Nigeria is shaped by Nigeria's multiple ethnic groups.
 The country has over 50 languages and over 250 dialects and ethnic
-groups (\citeproc{ref-ebby_traditional_2024}{Ebby 2024};
-\citeproc{ref-Ministry_of_Information_Culture_and_Tourism_2025}{Ministry
-of Information, Culture and Tourism n.d.}) . The three major ethnic
-groups are the Hausa-Fulani who are predominant in the north, the Yoruba
-who are predominant in the southwest, and the Igbo who are predominant
-in the south-east. In an effort to promote the rich cultural heritage of
-the country, the Ministry of Information, Culture and Tourism was
-created in the year 2015.
+groups \citeproc{ref-ebby_traditional_2024}{{[}1{]}},
+\citeproc{ref-Ministry_of_Information_Culture_and_Tourism_2025}{{[}2{]}}
+. The three major ethnic groups are the Hausa-Fulani who are predominant
+in the north, the Yoruba who are predominant in the southwest, and the
+Igbo who are predominant in the south-east. In an effort to promote the
+rich cultural heritage of the country, the Ministry of Information,
+Culture and Tourism was created in the year 2015.
 
 Nigeria's over 250 diverse ethnic groups are distinguished by unique
 traditional attires that embody their cultural identities. Manual
@@ -242,25 +330,20 @@ The dataset was then split into training, validation, and test sets.
 
 \subsubsection{Model Architectures}\label{model-architectures}
 
-Two CNN architectures were employed (\citeproc{ref-he_deep_2016}{He et
-al. 2016}; \citeproc{ref-tan_efficientnet:_2019}{Tan and Le 2019}):
+Two CNN architectures were employed
+\citeproc{ref-he_deep_2016}{{[}3{]}},
+\citeproc{ref-tan_efficientnet:_2019}{{[}4{]}}:
 
 \begin{itemize}
 \item
   \textbf{ResNet34}: A 34-layer residual network known for its ability
   to mitigate vanishing gradient issues
-  (\citeproc{ref-alshagathrh_efficient_2023}{Alshagathrh et al. 2023};
-  \citeproc{ref-kansal_resnet-50_2024}{Kansal, Chandra, and Singh 2024};
-  \citeproc{ref-pamungkas_leaf_2023}{Pamungkas et al. 2023};
-  \citeproc{ref-shams_skin_2025}{Shams et al. 2025}).
+  \citeproc{ref-alshagathrh_efficient_2023}{{[}5{]}}--\citeproc{ref-shams_skin_2025}{{[}8{]}}.
 \item
   \textbf{EfficientNet-B0}: A model that scales depth, width, and
   resolution uniformly using a compound coefficient, achieving high
   accuracy with fewer parameters
-  (\citeproc{ref-alshagathrh_efficient_2023}{Alshagathrh et al. 2023};
-  \citeproc{ref-kansal_resnet-50_2024}{Kansal, Chandra, and Singh 2024};
-  \citeproc{ref-pamungkas_leaf_2023}{Pamungkas et al. 2023};
-  \citeproc{ref-shams_skin_2025}{Shams et al. 2025}).
+  \citeproc{ref-alshagathrh_efficient_2023}{{[}5{]}}--\citeproc{ref-shams_skin_2025}{{[}8{]}}.
 \end{itemize}
 
 Both models were fine-tuned on the dataset, leveraging transfer learning
@@ -342,64 +425,98 @@ Data Science
 \addcontentsline{toc}{subsection}{References}
 
 \phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-alshagathrh_efficient_2023}
-Alshagathrh, Fahad M., Saleh Musleh, Mahmood Alzubaidi, Jens Schneider,
-and Mowafa S. Househ. 2023. {``Efficient {Detection} of {Hepatic}
-{Steatosis} in {Ultrasound} {Images} {Using} {Convolutional} {Neural}
-{Networks}: {A} {Comparative} {Study},''} October.
-\url{https://doi.org/10.18280/ts.400501}.
-
+\begin{CSLReferences}{0}{0}
 \bibitem[\citeproctext]{ref-ebby_traditional_2024}
-Ebby. 2024. {``The {Traditional} {Attires} {Of} {Nigerian} {Tribes}.''}
-\emph{Inspiration with Lois{\textbar} Lifestyle {\textbar} Nigeria}.
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Ebby, {``The {Traditional} {Attires} {Of} {Nigerian}
+{Tribes},''} \emph{Inspiration with Lois{\textbar} Lifestyle {\textbar}
+Nigeria}. Jun-2024 {[}Online{]}. Available:
 \url{https://loispiration.com/2024/06/17/the-traditional-attires-of-nigerian-tribes/}.
-
-\bibitem[\citeproctext]{ref-he_deep_2016}
-He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2016. {``Deep
-{Residual} {Learning} for {Image} {Recognition}.''} In \emph{2016 {IEEE}
-{Conference} on {Computer} {Vision} and {Pattern} {Recognition}
-({CVPR})}, 770--78. Las Vegas, NV, USA: IEEE.
-\url{https://doi.org/10.1109/CVPR.2016.90}.
-
-\bibitem[\citeproctext]{ref-kansal_resnet-50_2024}
-Kansal, Kajal, Tej Bahadur Chandra, and Akansha Singh. 2024.
-{``{ResNet}-50 Vs. {EfficientNet}-{B0}: {Multi}-{Centric}
-{Classification} of {Various} {Lung} {Abnormalities} {Using} {Deep}
-{Learning}.''} \emph{Procedia Computer Science}, International
-{Conference} on {Machine} {Learning} and {Data} {Engineering} ({ICMLDE}
-2023), 235 (January): 70--80.
-\url{https://doi.org/10.1016/j.procs.2024.04.007}.
+{[}Accessed: 31-May-2025{]}}
 
 \bibitem[\citeproctext]{ref-Ministry_of_Information_Culture_and_Tourism_2025}
-Ministry of Information, Culture and Tourism. n.d. {``Culture -- {MFA}
-{Press} {Center}.''} Accessed May 31, 2025.
+\CSLLeftMargin{{[}2{]} }%
+\CSLRightInline{Ministry of Information, Culture and Tourism, {``Culture
+-- {MFA} {Press} {Center}.''} {[}Online{]}. Available:
 \url{https://foreignaffairs.gov.ng/nigeria/nigeria-culture/}.
+{[}Accessed: 31-May-2025{]}}
 
-\bibitem[\citeproctext]{ref-pamungkas_leaf_2023}
-Pamungkas, Wisnu Gilang, Machammad Iqbal Putra Wardhana, Zamah Sari, and
-Yufiz Azhar. 2023. {``Leaf {Image} {Identification}: {CNN} with
-{EfficientNet}-{B0} and {ResNet}-50 {Used} to {Classified} {Corn}
-{Disease}.''} \emph{Jurnal RESTI (Rekayasa Sistem Dan Teknologi
-Informasi)} 7 (2): 326--33.
-\url{https://doi.org/10.29207/resti.v7i2.4736}.
-
-\bibitem[\citeproctext]{ref-shams_skin_2025}
-Shams, Mahmoud Y., Esraa Hassan, Sara Gamil, Aya Ibrahim, Esraa Gabr,
-Sarah Gamal, Esraa Ibrahim, et al. 2025. {``Skin {Disease}
-{Classification}: {A} {Comparison} of {ResNet50}, {MobileNet}, and
-{Efficient}-{B0}.''} \emph{Journal of Current Multidisciplinary
-Research} 1 (1): 1--7.
-\url{https://doi.org/10.21608/jcmr.2025.327880.1002}.
+\bibitem[\citeproctext]{ref-he_deep_2016}
+\CSLLeftMargin{{[}3{]} }%
+\CSLRightInline{K. He, X. Zhang, S. Ren, and J. Sun, {``Deep {Residual}
+{Learning} for {Image} {Recognition},''} in \emph{2016 {IEEE}
+{Conference} on {Computer} {Vision} and {Pattern} {Recognition}
+({CVPR})}, 2016, pp. 770--778 {[}Online{]}. Available:
+\url{http://ieeexplore.ieee.org/document/7780459/}. {[}Accessed:
+31-May-2025{]}}
 
 \bibitem[\citeproctext]{ref-tan_efficientnet:_2019}
-Tan, Mingxing, and Quoc V. Le. 2019. {``{EfficientNet}: {Rethinking}
-{Model} {Scaling} for {Convolutional} {Neural} {Networks}.''}
-\url{https://doi.org/10.48550/ARXIV.1905.11946}.
+\CSLLeftMargin{{[}4{]} }%
+\CSLRightInline{M. Tan and Q. V. Le, {``{EfficientNet}: {Rethinking}
+{Model} {Scaling} for {Convolutional} {Neural} {Networks},''} 2019
+{[}Online{]}. Available: \url{https://arxiv.org/abs/1905.11946}.
+{[}Accessed: 31-May-2025{]}}
+
+\bibitem[\citeproctext]{ref-alshagathrh_efficient_2023}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{F. M. Alshagathrh, S. Musleh, M. Alzubaidi, J.
+Schneider, and M. S. Househ, {``Efficient {Detection} of {Hepatic}
+{Steatosis} in {Ultrasound} {Images} {Using} {Convolutional} {Neural}
+{Networks}: {A} {Comparative} {Study},''} Oct. 2023 {[}Online{]}.
+Available:
+\url{https://manara.qnl.qa/articles/journal_contribution/Efficient_Detection_of_Hepatic_Steatosis_in_Ultrasound_Images_Using_Convolutional_Neural_Networks_A_Comparative_Study/26535460/1}.
+{[}Accessed: 01-Jun-2025{]}}
+
+\bibitem[\citeproctext]{ref-kansal_resnet-50_2024}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{K. Kansal, T. B. Chandra, and A. Singh, {``{ResNet}-50
+vs. {EfficientNet}-{B0}: {Multi}-{Centric} {Classification} of {Various}
+{Lung} {Abnormalities} {Using} {Deep} {Learning},''} \emph{Procedia
+Computer Science}, vol. 235, pp. 70--80, Jan. 2024 {[}Online{]}.
+Available:
+\url{https://www.sciencedirect.com/science/article/pii/S1877050924006768}.
+{[}Accessed: 01-Jun-2025{]}}
+
+\bibitem[\citeproctext]{ref-pamungkas_leaf_2023}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{W. G. Pamungkas, M. I. P. Wardhana, Z. Sari, and Y.
+Azhar, {``Leaf {Image} {Identification}: {CNN} with {EfficientNet}-{B0}
+and {ResNet}-50 {Used} to {Classified} {Corn} {Disease},''} \emph{Jurnal
+RESTI (Rekayasa Sistem dan Teknologi Informasi)}, vol. 7, no. 2, pp.
+326--333, Mar. 2023 {[}Online{]}. Available:
+\url{http://www.jurnal.iaii.or.id/index.php/RESTI/article/view/4736}.
+{[}Accessed: 01-Jun-2025{]}}
+
+\bibitem[\citeproctext]{ref-shams_skin_2025}
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{M. Y. Shams \emph{et al.}, {``Skin {Disease}
+{Classification}: {A} {Comparison} of {ResNet50}, {MobileNet}, and
+{Efficient}-{B0},''} \emph{Journal of Current Multidisciplinary
+Research}, vol. 1, no. 1, pp. 1--7, Jan. 2025 {[}Online{]}. Available:
+\url{https://jcmr.journals.ekb.eg/article_407474.html}. {[}Accessed:
+01-Jun-2025{]}}
 
 \end{CSLReferences}
 
 
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
 
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
 
+% Uncomment when use biblatex with style=ieee
+%\renewcommand{\bibfont}{\footnotesize} % for IEEE bibfont size
+
+\pagebreak[3]
+% that's all folks
 \end{document}
+
