@@ -123,8 +123,8 @@ Traditional Attire</article-title>
 <abstract>
 This study presents a deep learning approach to classify images of
 Nigerian traditional attire into their respective ethnic categories.
-Utilizing Convolutional Neuraetworks (CNNs), specifically ResNet34 and
-EfficientNet-B0 architectures, the project aims to automate the
+Utilizing Convolutional Neural Networks (CNNs), specifically ResNet34
+and EfficientNet-B0 architectures, the project aims to automate the
 identification of cultural garments, thereby contributing to the
 preservation and appreciation of Nigeria’s rich cultural heritage.
 </abstract>
@@ -186,12 +186,28 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
     <list list-type="bullet">
       <list-item>
         <p><bold>ResNet34</bold>: A 34-layer residual network known for
-        its ability to mitigate vanishing gradient issues.</p>
+        its ability to mitigate vanishing gradient issues
+        (<xref alt="Alshagathrh et al. 2023" rid="ref-alshagathrh_efficient_2023" ref-type="bibr">Alshagathrh
+        et al. 2023</xref>;
+        <xref alt="Kansal, Chandra, and Singh 2024" rid="ref-kansal_resnet-50_2024" ref-type="bibr">Kansal,
+        Chandra, and Singh 2024</xref>;
+        <xref alt="Pamungkas et al. 2023" rid="ref-pamungkas_leaf_2023" ref-type="bibr">Pamungkas
+        et al. 2023</xref>;
+        <xref alt="Shams et al. 2025" rid="ref-shams_skin_2025" ref-type="bibr">Shams
+        et al. 2025</xref>).</p>
       </list-item>
       <list-item>
         <p><bold>EfficientNet-B0</bold>: A model that scales depth,
         width, and resolution uniformly using a compound coefficient,
-        achieving high accuracy with fewer parameters.</p>
+        achieving high accuracy with fewer parameters
+        (<xref alt="Alshagathrh et al. 2023" rid="ref-alshagathrh_efficient_2023" ref-type="bibr">Alshagathrh
+        et al. 2023</xref>;
+        <xref alt="Kansal, Chandra, and Singh 2024" rid="ref-kansal_resnet-50_2024" ref-type="bibr">Kansal,
+        Chandra, and Singh 2024</xref>;
+        <xref alt="Pamungkas et al. 2023" rid="ref-pamungkas_leaf_2023" ref-type="bibr">Pamungkas
+        et al. 2023</xref>;
+        <xref alt="Shams et al. 2025" rid="ref-shams_skin_2025" ref-type="bibr">Shams
+        et al. 2025</xref>).</p>
       </list-item>
     </list>
     <p>Both models were fine-tuned on the dataset, leveraging transfer
@@ -314,6 +330,105 @@ preservation and appreciation of Nigeria’s rich cultural heritage.
       <article-title>Culture – MFA Press Center</article-title>
       <date-in-citation content-type="access-date"><year iso-8601-date="2025-05-31">2025</year><month>05</month><day>31</day></date-in-citation>
       <uri>https://foreignaffairs.gov.ng/nigeria/nigeria-culture/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-tan_efficientnetU003A_2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Tan</surname><given-names>Mingxing</given-names></name>
+        <name><surname>Le</surname><given-names>Quoc V.</given-names></name>
+      </person-group>
+      <article-title>EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks</article-title>
+      <year iso-8601-date="2019">2019</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-05-31">2025</year><month>05</month><day>31</day></date-in-citation>
+      <uri>https://arxiv.org/abs/1905.11946</uri>
+      <pub-id pub-id-type="doi">10.48550/ARXIV.1905.11946</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-shams_skin_2025">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Shams</surname><given-names>Mahmoud Y.</given-names></name>
+        <name><surname>Hassan</surname><given-names>Esraa</given-names></name>
+        <name><surname>Gamil</surname><given-names>Sara</given-names></name>
+        <name><surname>Ibrahim</surname><given-names>Aya</given-names></name>
+        <name><surname>Gabr</surname><given-names>Esraa</given-names></name>
+        <name><surname>Gamal</surname><given-names>Sarah</given-names></name>
+        <name><surname>Ibrahim</surname><given-names>Esraa</given-names></name>
+        <name><surname>Abbas</surname><given-names>Fares</given-names></name>
+        <name><surname>Mohammed</surname><given-names>Ahmed</given-names></name>
+        <name><surname>Khamis</surname><given-names>Anwar</given-names></name>
+        <name><surname>Hamed</surname><given-names>Mohamed</given-names></name>
+        <name><surname>Mokhtar</surname><given-names>Mahmoud</given-names></name>
+        <name><surname>Bhatnagar</surname><given-names>Roheet</given-names></name>
+      </person-group>
+      <article-title>Skin Disease Classification: A Comparison of ResNet50, MobileNet, and Efficient-B0</article-title>
+      <source>Journal of Current Multidisciplinary Research</source>
+      <year iso-8601-date="2025-01">2025</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-06-01">2025</year><month>06</month><day>01</day></date-in-citation>
+      <volume>1</volume>
+      <issue>1</issue>
+      <issn>3062-4614</issn>
+      <uri>https://jcmr.journals.ekb.eg/article_407474.html</uri>
+      <pub-id pub-id-type="doi">10.21608/jcmr.2025.327880.1002</pub-id>
+      <fpage>1</fpage>
+      <lpage>7</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-kansal_resnet-50_2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Kansal</surname><given-names>Kajal</given-names></name>
+        <name><surname>Chandra</surname><given-names>Tej Bahadur</given-names></name>
+        <name><surname>Singh</surname><given-names>Akansha</given-names></name>
+      </person-group>
+      <article-title>ResNet-50 vs. EfficientNet-B0: Multi-Centric Classification of Various Lung Abnormalities Using Deep Learning</article-title>
+      <source>Procedia Computer Science</source>
+      <year iso-8601-date="2024-01">2024</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-06-01">2025</year><month>06</month><day>01</day></date-in-citation>
+      <volume>235</volume>
+      <issn>1877-0509</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1877050924006768</uri>
+      <pub-id pub-id-type="doi">10.1016/j.procs.2024.04.007</pub-id>
+      <fpage>70</fpage>
+      <lpage>80</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-pamungkas_leaf_2023">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Pamungkas</surname><given-names>Wisnu Gilang</given-names></name>
+        <name><surname>Wardhana</surname><given-names>Machammad Iqbal Putra</given-names></name>
+        <name><surname>Sari</surname><given-names>Zamah</given-names></name>
+        <name><surname>Azhar</surname><given-names>Yufiz</given-names></name>
+      </person-group>
+      <article-title>Leaf Image Identification: CNN with EfficientNet-B0 and ResNet-50 Used to Classified Corn Disease</article-title>
+      <source>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)</source>
+      <year iso-8601-date="2023-03">2023</year><month>03</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-06-01">2025</year><month>06</month><day>01</day></date-in-citation>
+      <volume>7</volume>
+      <issue>2</issue>
+      <issn>2580-0760</issn>
+      <uri>http://www.jurnal.iaii.or.id/index.php/RESTI/article/view/4736</uri>
+      <pub-id pub-id-type="doi">10.29207/resti.v7i2.4736</pub-id>
+      <fpage>326</fpage>
+      <lpage>333</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-alshagathrh_efficient_2023">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Alshagathrh</surname><given-names>Fahad M.</given-names></name>
+        <name><surname>Musleh</surname><given-names>Saleh</given-names></name>
+        <name><surname>Alzubaidi</surname><given-names>Mahmood</given-names></name>
+        <name><surname>Schneider</surname><given-names>Jens</given-names></name>
+        <name><surname>Househ</surname><given-names>Mowafa S.</given-names></name>
+      </person-group>
+      <article-title>Efficient Detection of Hepatic Steatosis in Ultrasound Images Using Convolutional Neural Networks: A Comparative Study</article-title>
+      <year iso-8601-date="2023-10">2023</year><month>10</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-06-01">2025</year><month>06</month><day>01</day></date-in-citation>
+      <uri>https://manara.qnl.qa/articles/journal_contribution/Efficient_Detection_of_Hepatic_Steatosis_in_Ultrasound_Images_Using_Convolutional_Neural_Networks_A_Comparative_Study/26535460/1</uri>
+      <pub-id pub-id-type="doi">10.18280/ts.400501</pub-id>
     </element-citation>
   </ref>
 </ref-list>
