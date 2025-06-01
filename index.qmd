@@ -1,0 +1,145 @@
+---
+title: Deep Learning Based Classification of Nigerian Traditional Attire
+date: today
+citation: true
+citations-hover: true
+
+author:
+  - name: Naziru Abdussalam Ibrahim
+    # affiliation: The University
+    roles: [conceptualization, data curation, investigation, methodology, resources, project administration]
+    corresponding: true
+    email: naziruai@gmail.com
+    orcid: 0000-0002-1825-0097
+
+  - name: Ahmad Saad 
+    email: ahmedwafiqs@gmail.com
+    roles: [conceptualization, data curation, investigation, methodology, writing, editing]
+    orcid: 0000-0002-1825-0097
+
+  - name: Abdulwasiu B. Popoola
+    email: waga43tech@gmail.com
+    roles: [conceptualization, writing, editing]
+    orcid: 0009-0000-9742-777X
+
+  - name: Taiwo Soffiyah Abass
+    email: soffiyahabass1@gmail.com
+    roles: [conceptualization, data curation, investigation, methodology, resources, project administration]
+    orcid: 0000-0002-1825-0097
+    
+
+  - name: Ayodeji Akande
+    email: ayodejiakande2107@gmail.com
+    roles: [conceptualization, data curation, investigation, methodology, resources, project administration]
+    orcid: 0000-0002-1825-0097
+
+  - name: Shamsu Abdullahi 
+    email: engrdanalupalladan@gmail.com
+    roles: [conceptualization, data curation, investigation, methodology, resources, project administration]
+    orcid: 0000-0002-1825-0097
+
+  - name: Abubakar Sadiq Sulaiman 
+    email: abubakarsani@gmail.com
+    roles: [conceptualization, data curation, investigation, methodology, resources, project administration]
+    orcid: 0000-0002-1825-0097
+
+  - name: Yahya Abdurrazaq
+    email: yahyarimi01@gmail.com
+    roles:  [conceptualization, data curation, project administration]
+    orcid: 0000-0002-1825-0097
+
+copyright: Arewa Data Science Academy and the authors of this article.
+bibliography: references.bib
+abstract-title: Abstract
+abstract: This study presents a deep learning approach to classify images of Nigerian traditional attire into their respective ethnic categories. Utilizing Convolutional Neural Networks (CNNs), specifically ResNet34 and EfficientNet-B0 architectures, the project aims to automate the identification of cultural garments, thereby contributing to the preservation and appreciation of Nigeria's rich cultural heritage.
+format:
+  ieee-pdf: default
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+keywords: 
+  - Deep Learning
+  - Nigerian Traditional Attire
+  - Convolutional Neural Networks
+  - ResNet34
+  - EfficientNet-B0
+
+plain-language-summary: Nigeria has over 250 ethnic groups with varied customs and ethnic attires. This project demonstrates the Use of AI to correctly identify the ethnic group a person belongs to from his type of attire.
+
+funding: The authors received no funding for this work.
+
+# index-terms:
+# - Arewa Data Science Academy
+# - DeeLearning
+# - ResNet34
+# - EfficientNet-B0
+# - Nigerian traditional attire
+# format: pdf
+# template: IEEE-conference-template-062824.tex
+# format:
+#   typst: default
+---
+
+## Introduction
+
+The culture of Nigeria is shaped by Nigeria’s multiple ethnic groups. The country has over 50 languages and over 250 dialects and ethnic groups [@ebby_traditional_2024; @Ministry_of_Information_Culture_and_Tourism_2025] . The three major ethnic groups are the Hausa-Fulani who are predominant in the north, the Yoruba who are predominant in the southwest, and the Igbo who are predominant in the south-east. In an effort to promote the rich cultural heritage of the country, the Ministry of Information, Culture and Tourism was created in the year 2015.
+
+Nigeria's over 250 diverse ethnic groups are distinguished by unique traditional attires that embody their cultural identities. Manual classification of these garments can be time-consuming and subjective. This project explores the application of deep learning techniques to accurately classify images of traditional Nigerian clothing, facilitating cultural education and digital archiving.
+
+## Methodology
+
+### Data Collection
+
+Images representing various Nigerian ethnic attires were collected using custom Python scripts (`download_attire.py` and `download_attire_extended.py`). The dataset includes categories such as Yoruba, Hausa, Igbo, and others, with images depicting traditional garments in various settings.
+
+### Data Preprocessing
+
+The collected images underwent preprocessing steps, including resizing, normalization, and data augmentation, to enhance model generalization. The dataset was then split into training, validation, and test sets.
+
+### Model Architectures
+
+Two CNN architectures were employed [@he_deep_2016; @tan_efficientnet:_2019]:
+
+-   **ResNet34**: A 34-layer residual network known for its ability to mitigate vanishing gradient issues [@alshagathrh_efficient_2023;@kansal_resnet-50_2024;@pamungkas_leaf_2023;@shams_skin_2025].
+
+-   **EfficientNet-B0**: A model that scales depth, width, and resolution uniformly using a compound coefficient, achieving high accuracy with fewer parameters [@alshagathrh_efficient_2023;@kansal_resnet-50_2024;@pamungkas_leaf_2023;@shams_skin_2025].
+
+Both models were fine-tuned on the dataset, leveraging transfer learning from pre-trained weights.
+
+### Training and Evaluation
+
+Training was conducted using standard practices, including the use of cross-entropy loss and optimization via stochastic gradient descent[@li_cross-entropy_2024;@alshagathrh_efficient_2023]. Model performance was evaluated based on accuracy, precision, recall, and F1-score on the validation and test sets.
+
+## Results
+
+Both models demonstrated strong performance in classifying traditional Nigerian attires:
+
+-   **ResNet34**: Achieved an accuracy of approximately 85% on the test set.
+
+-   **EfficientNet-B0**: Outperformed ResNet34 with an accuracy of around 90%, indicating better generalization capabilities.
+
+Confusion matrices and classification reports further highlighted the models' proficiency in distinguishing between different ethnic attires.
+
+![Loss over Epochs and Validation Accuracy over Epochs](assets\loss-of-epochs-and-validation-accuracy.png){#fig-loss}
+
+![Confusion matrix](assets\confusion-matrix.png){#fig-confusion-matrix}
+
+## Discussion
+
+The superior performance of EfficientNet-B0 suggests its suitability for image classification tasks involving cultural garments [@yuan_research_2025].  The results affirm the potential of deep learning models in automating the recognition of traditional attires, which can be instrumental in cultural preservation efforts.
+
+## Conclusion
+
+This project successfully demonstrates the application of deep learning techniques in classifying Nigerian traditional attire. The developed models can serve as foundational tools for cultural education platforms, virtual museums, and fashion industry applications. Future work may involve expanding the dataset to include more ethnic groups and exploring real-time classification systems.
+
+## Acknowledgment {.appendix .unnumbered}
+
+The authors wish to acknowledge the efforts of the entire team at Arewa Data Science Academy for their dedication and commitment towards democratizing data science knowledge, and particularly for their guidance and mentorship during the Deep Learning Cohort 2 fellowship and throughout this capstone project.
+
+{{< pagebreak >}}
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

@@ -1,0 +1,32 @@
+project:
+  type: manuscript
+  output-dir: docs
+title: Arewa Data Science Academy Deep Learning Cohort II (Group 9) Capstone Project
+description: |
+  This is the capstone project for the Arewa Data Science Academy Deep Learning Cohort II (Group 9). The project focuses on using Deep Learning to classify images of Nigerian traditional attire into their respective ethnic categories.
+
+
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    comments:
+      hypothesis: true
+
+  docx: 
+    reference-doc: conference-template-a4.docx
+  # ms-word:
+  #   template: conference-template-a4.docx
+  jats: default
+  pdf: default
+    # template: template.tex
+  
+  # (other formats)
+
+execute:
+  freeze: true
+link-citations: true
+link-bibliography: true
+

@@ -1,0 +1,7 @@
+.DS_Store
+template_files/
+/env/
+_freeze/
+_quarto.yml.local
+_site/
+/.quarto/
