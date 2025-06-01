@@ -220,6 +220,8 @@
 \hypersetup{
   pdftitle={Deep Learning Based Classification of Nigerian Traditional Attire},
   pdfauthor={Naziru Abdussalam Ibrahim; Ahmad Saad; Abdulwasiu Bamidele Popoola; Taiwo Soffiyah Abass; Ayodeji Akande; Shamsu Abdullahi; Abubakar Sadiq Sulaiman; Yahya Abdurrazaq},
+  pdfkeywords={Deep Learning, Nigerian Traditional Attire, Convolutional
+Neural Networks, ResNet34, EfficientNet-B0},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -248,10 +250,15 @@
 Attire}
 
 \author{
-Naziru Abdussalam Ibrahim,~Ahmad Saad,~Abdulwasiu Bamidele
-Popoola,~Taiwo Soffiyah Abass,~Ayodeji Akande,~Shamsu
-Abdullahi,~Abubakar Sadiq Sulaiman
-and~Yahya Abdurrazaq%
+\thanks{The authors received no funding for this work.}
+Naziru Abdussalam Ibrahim\orcidlink{0000-0002-1825-0097},~Ahmad
+Saad\orcidlink{0000-0002-1825-0097},~Abdulwasiu Bamidele
+Popoola\orcidlink{0009-0000-9742-777X},~Taiwo Soffiyah
+Abass\orcidlink{0000-0002-1825-0097},~Ayodeji
+Akande\orcidlink{0000-0002-1825-0097},~Shamsu
+Abdullahi\orcidlink{0000-0002-1825-0097},~Abubakar Sadiq
+Sulaiman\orcidlink{0000-0002-1825-0097}
+and~Yahya Abdurrazaq\orcidlink{0000-0002-1825-0097}%
 %by-author.affiliations
 %by-author.affiliations
 %by-author.affiliations
@@ -281,6 +288,10 @@ identification of cultural garments, thereby contributing to the
 preservation and appreciation of Nigeria's rich cultural heritage.
 \end{abstract}
 % Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Deep Learning, Nigerian Traditional Attire, Convolutional Neural
+Networks, ResNet34, EfficientNet-B0
+\end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
 % page as needed:
@@ -352,9 +363,11 @@ from pre-trained weights.
 \subsubsection{Training and Evaluation}\label{training-and-evaluation}
 
 Training was conducted using standard practices, including the use of
-cross-entropy loss and optimization via stochastic gradient descent.
-Model performance was evaluated based on accuracy, precision, recall,
-and F1-score on the validation and test sets.
+cross-entropy loss and optimization via stochastic gradient
+descent\citeproc{ref-alshagathrh_efficient_2023}{{[}5{]}},
+\citeproc{ref-li_cross-entropy_2024}{{[}9{]}}. Model performance was
+evaluated based on accuracy, precision, recall, and F1-score on the
+validation and test sets.
 
 \subsection{Results}\label{results}
 
@@ -401,10 +414,11 @@ Epochs}
 \subsection{Discussion}\label{discussion}
 
 The superior performance of EfficientNet-B0 suggests its suitability for
-image classification tasks involving cultural garments. The results
-affirm the potential of deep learning models in automating the
-recognition of traditional attires, which can be instrumental in
-cultural preservation efforts.
+image classification tasks involving cultural garments
+\citeproc{ref-yuan_research_2025}{{[}10{]}}. The results affirm the
+potential of deep learning models in automating the recognition of
+traditional attires, which can be instrumental in cultural preservation
+efforts.
 
 \subsection{Conclusion}\label{conclusion}
 
@@ -494,6 +508,23 @@ RESTI (Rekayasa Sistem dan Teknologi Informasi)}, vol. 7, no. 2, pp.
 {Efficient}-{B0},''} \emph{Journal of Current Multidisciplinary
 Research}, vol. 1, no. 1, pp. 1--7, Jan. 2025 {[}Online{]}. Available:
 \url{https://jcmr.journals.ekb.eg/article_407474.html}. {[}Accessed:
+01-Jun-2025{]}}
+
+\bibitem[\citeproctext]{ref-li_cross-entropy_2024}
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{K. Li and F. Li, {``Cross-{Entropy} {Optimization} for
+{Hyperparameter} {Optimization} in {Stochastic} {Gradient}-based
+{Approaches} to {Train} {Deep} {Neural} {Networks},''} Sep. 2024
+{[}Online{]}. Available: \url{http://arxiv.org/abs/2409.09240}.
+{[}Accessed: 01-Jun-2025{]}}
+
+\bibitem[\citeproctext]{ref-yuan_research_2025}
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{W. Yuan and Y. Ge, {``Research on national pattern
+innovation fusion and packaging design system based on efficient net
+image recognition and transfer learning algorithm,''} \emph{GeoJournal},
+vol. 90, no. 2, p. 78, Apr. 2025 {[}Online{]}. Available:
+\url{https://link.springer.com/10.1007/s10708-025-11325-5}. {[}Accessed:
 01-Jun-2025{]}}
 
 \end{CSLReferences}
